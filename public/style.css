@@ -1,0 +1,75 @@
+/* GlanceWire — designed for the G2's 576x288 monochrome green display.
+   One thing per screen, big type, high contrast, no decoration. */
+:root {
+  --ink: #4dff6a;
+  --ink-dim: #1f9d3f;
+  --ink-faint: #0d5c22;
+  --bg: #000;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: #0a0f0a;
+  color: var(--ink);
+  font-family: "SF Mono", "Cascadia Mono", Consolas, monospace;
+  display: flex;
+  justify-content: center;
+  padding: 24px 12px;
+}
+.shell { width: 576px; max-width: 100%; }
+.frame-label { color: var(--ink-dim); font-size: 12px; letter-spacing: 2px; margin-bottom: 8px; }
+#stage {
+  width: 576px;
+  max-width: 100%;
+  height: 288px;
+  background: var(--bg);
+  border: 2px solid var(--ink-faint);
+  border-radius: 18px;
+  padding: 14px 18px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.bar {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--ink-faint);
+  padding-bottom: 6px;
+  margin-bottom: 10px;
+  font-size: 15px;
+  letter-spacing: 1px;
+}
+.bar .right { color: var(--ink-dim); }
+.menu { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; flex: 1; align-content: center; }
+button {
+  background: #021a07;
+  color: var(--ink);
+  border: 1px solid var(--ink-dim);
+  border-radius: 10px;
+  font: inherit;
+  font-size: 15px;
+  padding: 9px 10px;
+  cursor: pointer;
+}
+button:hover, button:focus { background: #06360f; outline: none; }
+button.primary { background: #0a4d1c; border-color: var(--ink); }
+button.big { font-size: 16px; padding: 14px 10px; text-align: left; }
+.card { flex: 1; display: flex; flex-direction: column; gap: 8px; overflow: hidden; }
+.meta { color: var(--ink-dim); font-size: 13px; }
+.body { font-size: 19px; line-height: 1.35; overflow: hidden; }
+.body.q { font-size: 20px; }
+.odds { display: flex; gap: 18px; font-size: 22px; }
+.odds .yes { color: var(--ink); }
+.odds .no { color: var(--ink-dim); }
+.row { display: flex; gap: 8px; margin-top: 8px; }
+.row button { flex: 1; }
+.hint { color: var(--ink-dim); font-size: 13px; margin-top: 8px; }
+.empty { flex: 1; display: flex; align-items: center; color: var(--ink-dim); font-size: 16px; }
+.positions { flex: 1; overflow: hidden; display: flex; flex-direction: column; gap: 6px; }
+.pos { display: flex; justify-content: space-between; gap: 10px; font-size: 14px; border-bottom: 1px dotted var(--ink-faint); padding-bottom: 4px; }
+.pos button { padding: 0 8px; font-size: 13px; }
+.up { color: var(--ink); }
+.down { color: #ff7a59; }
+.under { display: flex; align-items: center; gap: 12px; margin-top: 10px; }
+#status { color: var(--ink-dim); font-size: 13px; min-height: 16px; }
+.foot { color: #3f7a4c; font-size: 12px; line-height: 1.5; max-width: 576px; }
